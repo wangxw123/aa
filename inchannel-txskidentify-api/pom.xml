@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.reapal</groupId>
+        <artifactId>inchannel-identify-parent</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+        <relativePath>../inchannel-identify-parent/pom.xml</relativePath>
+    </parent>
+    <artifactId>inchannel-txskidentify-api</artifactId>
+    <name>inchannel-txskidentify-api</name>
+    <packaging>jar</packaging>
+
+    <properties>
+        <skip_maven_deploy>true</skip_maven_deploy>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>inchannel-identify-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+</project>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.reapal</groupId>
+    <artifactId>inchannelidentify</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.reapal</groupId>
+            <artifactId>inchannel-identify-common</artifactId>
+            <version>2.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <packaging>pom</packaging>
+
+    <name>inchannelidentify</name>
+    <url>http://maven.apache.org</url>
+
+    <modules>
+        <module>inchannel-identify-parent</module>
+        <module>inchannel-identify-common</module>
+        <module>inchannel-identify-job</module>
+
+        <module>inchannel-chinapayidentify-api</module>
+        <module>inchannel-chinapayidentify-provider</module>
+
+        <module>inchannel-txskidentify-api</module>
+        <module>inchannel-txskidentify-provider</module>
+
+        <module>inchannel-cfcaidentify-api</module>
+        <module>inchannel-cfcaidentify-provider</module>
+
+        <module>inchannel-tjylidentify-api</module>
+        <module>inchannel-tjylidentify-provider</module>
+
+        <module>inchannel-kaolaidentify-api</module>
+        <module>inchannel-kaolaidentify-provider</module>
+
+        <module>inchannel-ahzxidentify-api</module>
+        <module>inchannel-ahzxidentify-provider</module>
+
+
+        <!--<module>inchannel-cmbcpayxmidentify-api</module>-->
+        <!--<module>inchannel-cmbcpayxmidentify-provider</module>-->
+        <module>inchannel-cmbcpayidentify-api</module>
+        <module>inchannel-cmbcpayidentify-provider</module>
+        <!--<module>inchannel-szylidentify-api</module>
+        <module>inchannel-szylidentify-provider</module>-->
+
+    </modules>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>cashier-snapshot</id>
+            <name>Cashier Snapshot</name>
+            <url>http://10.168.21.53:8081/nexus/content/repositories/cashier-snapshots/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+        <repository>
+            <id>cashier-release</id>
+            <name>Cashier Release</name>
+            <url>http://10.168.21.53:8081/nexus/content/repositories/cashier-releases/</url>
+        </repository>
+    </distributionManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

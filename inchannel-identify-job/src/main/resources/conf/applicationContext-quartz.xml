@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+
+
+    <!--新对账单生成-->
+    <bean id="szjszxAccountFileJob" class="com.reapal.job.SzjszxAccountFileJob"/>
+    <bean name="szjszxAccountFileTask"
+          class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass" value="com.reapal.job.SzjszxAccountFileJob"/>
+    </bean>
+
+    <bean id="cronTriggerSzjszxAccountFileTask"
+          class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail">
+            <ref bean="szjszxAccountFileTask"/>
+        </property>
+        <!-- 每天6点 运行一次  -->
+        <property name="cronExpression" value="0 40 06 * * ?">
+        <!--<property name="cronExpression" value="0 57 11 * * ?">-->
+        </property>
+    </bean>
+
+
+    <!-- 调度器  -->
+    <bean
+            class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+
+                <ref bean="cronTriggerSzjszxAccountFileTask"/>
+
+            </list>
+        </property>
+        <property name="configLocation" value="classpath:quartz.properties" />
+    </bean>
+
+
+
+</beans>

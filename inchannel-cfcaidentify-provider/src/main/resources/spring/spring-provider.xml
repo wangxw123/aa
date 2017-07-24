@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 公共信息，也可以用dubbo.properties配置 -->
+    <dubbo:application name="inchannel-cfcaidentify-provider" />
+
+    <bean id="cfcaIdentifyService" class="com.reapal.inchannel.cfcaidentify.service.impl.CfcaIdentifyServiceImpl" />
+    <dubbo:service interface="com.reapal.inchannel.cfcaidentify.service.CfcaIdentifyService" ref="cfcaIdentifyService"  timeout="60000" />
+
+
+
+</beans>
